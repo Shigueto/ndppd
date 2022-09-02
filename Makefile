@@ -30,6 +30,13 @@ install: all
 	cp ndppd.1.gz ${MANDIR}/man1
 	cp ndppd.conf.5.gz ${MANDIR}/man5
 
+# Update a previous installed ndppd (apt install ndppd)
+# Requires sudo
+update: all
+	cp ndppd /usr/sbin/ndppd
+	cp ndppd.1.gz /usr/share/man/man1/ndppd.1.gz
+	cp ndppd.conf.5.gz /usr/share/man/man5/ndppd.conf.5.gz
+
 ndppd.1.gz:
 	${GZIP} < ndppd.1 > ndppd.1.gz
 
